@@ -166,7 +166,6 @@ module.exports = function(client) {
   });
 
   participantsView.on('conversation:create', function(participants) {
-    // See http://static.layer.com/sdk/docs/#!/api/layer.Conversation
     var conversation = client.createConversation({
       participants: participants,
       distinct: participants.length === 1
