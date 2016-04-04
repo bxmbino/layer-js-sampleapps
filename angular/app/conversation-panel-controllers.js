@@ -39,7 +39,11 @@ controllers.controller('conversationCtrl', function($scope) {
       } else {
         message = conversationInstance.createMessage(text);
       }
-      message.send();
+      message.send({
+        title: 'New Message from ' + message.sender.displayName,
+        text: 'New Message: ' + $scope.sendText
+      });
+      $scope.sendText = '';
     }
   };
 

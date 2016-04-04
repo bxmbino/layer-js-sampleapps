@@ -24,6 +24,10 @@ module.exports = Backbone.View.extend({
 
     if (e.keyCode !== 13 || !text) return true;
     console.log('send: ' + text);
+    var notification = {
+      title: 'New Message from ' + this.conversation.getClient().user.displayName,
+      text: 'New Message: ' + text
+    };
 
     // Example of using custom mime type
     if (text.indexOf('> ') === 0) {
@@ -32,9 +36,9 @@ module.exports = Backbone.View.extend({
           mimeType: 'text/quote',
           body: text.substring(2)
         }]
-      }).send();
+      }).send(notification);
     } else { // Text plain is default
-      this.conversation.createMessage(text).send();
+      this.conversation.createMessage(text).send(notification);
     }
 
     e.target.value = '';

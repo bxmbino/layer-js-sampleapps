@@ -42,6 +42,7 @@ function handleAction(layerClient, typingPublisher, state, action, next) {
     case SUBMIT_COMPOSER_MESSAGE: {
       typingPublisher.setState(FINISHED);
 
+<<<<<<< HEAD
       const conversation = layerClient
           .getConversation(`layer:///conversations/${state.router.params.conversationId}`, true);
       const text = state.activeConversation.composerMessage;
@@ -57,7 +58,10 @@ function handleAction(layerClient, typingPublisher, state, action, next) {
       } else {
         message = conversation.createMessage(text);
       }
-      message.send();
+      message.send({
+        title: 'New Message from ' + layerClient.user.displayName,
+        text: 'New Message: ' + state.activeConversation.composerMessage
+      });
 
       return;
     }
