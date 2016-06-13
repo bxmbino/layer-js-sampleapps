@@ -38,6 +38,7 @@ sampleControllers.controller('appCtrl', function ($scope) {
    * when first rendering.
    */
   identityReady = function() {
+    initCordovaPush($scope.appCtrlState.client, $scope);
 
     /**
      * Initialize Layer Client with `appId`
@@ -169,3 +170,4 @@ sampleControllers.controller('chatCtrl', function ($scope, $route, $location) {
   };
 });
 
+window.initCordovaPush = function(client, scope) {};
