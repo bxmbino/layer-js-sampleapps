@@ -20,7 +20,7 @@
   <title>Layer Angular example</title>
 
   <script src="cordova.js"></script>
-
+  <script>localStorage.layerAppId = "layer:///apps/staging/1d980162-c5ee-11e5-bb69-e08c0300541f"</script>
   <link rel="shortcut icon" href="http://static.layer.com/web/favicon.png">
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
@@ -43,8 +43,11 @@
   <script src='app/app.js'></script>
   <script src='app/main-controllers.js'></script>
   <script src='init-cordova.js'></script>
+  <script src='app/conversation-list-controllers.js'></script>
+  <script src='app/message-list-controllers.js'></script>
+  <script src='app/message-item-controllers.js'></script>
   <script src='app/conversation-panel-controllers.js'></script>
-  <script src='app/new-conversation-panel-controllers.js'></script>
+  <script src='app/participant-dialog-controllers.js'></script>
 </head>
 <body ng-controller="appCtrl">
     <div class="main-app" ng-include="'partials/app.html'"

@@ -38,14 +38,15 @@ sampleControllers.controller('appCtrl', function ($scope) {
    * when first rendering.
    */
   identityReady = function() {
-    initCordovaPush($scope.appCtrlState.client, $scope);
-
     /**
      * Initialize Layer Client with `appId`
      */
     $scope.appCtrlState.client = new layer.Client({
       appId: window.layerSample.appId
     });
+
+    // Used by Cordova/Phonegap project only
+    initCordovaPush($scope.appCtrlState.client, $scope);
 
     /**
      * Client authentication challenge.

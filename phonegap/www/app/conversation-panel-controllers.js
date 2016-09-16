@@ -41,7 +41,7 @@ controllers.controller('conversationCtrl', function($scope) {
       }
       message.send({
         title: 'New Message from ' + message.sender.displayName,
-        text: 'New Message: ' + $scope.sendText
+        text: 'New Message: ' + message.parts[0].body
       });
       $scope.sendText = '';
     }
