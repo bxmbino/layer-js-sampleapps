@@ -1,0 +1,14 @@
+<div class='participant-list-container dialog-container' ng-controller="participantsDialogCtrl" ng-click="$event.stopPropagation()">
+    <div class="panel-header">
+        <span class="title">Select Participants</span>
+    </div>
+    <layer-user-list
+        ng-app-id="appCtrlState.client.appId"
+        ng-user-selected="onUserSelectionChange"
+        ng-selected-users="selectedUsers"
+        >
+    </layer-user-list>
+    <div class="button-panel">
+      <button class="button-ok" ng-click="createConversation()">OK</button>
+    </div>
+</div>

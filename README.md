@@ -1,19 +1,34 @@
 # Sample apps using Layer Web SDK
 
-This repository contains sample chat applications that use version 3.0
-Beta of the Layer Web SDK to demonstrate how one would use the SDK to build a simple chat application using one of these three popular frameworks:
+This repository contains sample chat applications that demonstrate different ways of building a Web Application with Layer.  The following sample apps are available:
 
- - [Backbone](./backbone)
- - [Angular](./angular)
- - [React](./react)
-
-Each sample app implementation is framework specific and not necessarily a demonstration of best practice.
+* Raw WebSDK applications built with Layer WebSDK 3.0, and assorted UI Frameworks:
+  - [Backbone](./websdk/backbone)
+  - [Angular](./websdk/angular)
+  - [React](./websdk/react)
+* Applications built using Layer UI for Web widgets, Layer WebSDK 3.0, and assorted UI Frameworks:
+  - [Backbone + Layer UI](./layer-ui-web/backbone)
+  - [Angular + Layer UI](./layer-ui-web/angular)
+  - [React + Layer UI](./layer-ui-web/react)
 
 ![Screenshot](sample-screenshot.png)
 
 ## The Web SDK
 
-The Web SDK in all samples is loaded via script tag directly from our [CDN](https://cdn.layer.com/sdk/3.0/layer-websdk.js). For more information on how the Web SDK works, see [Web SDK Docs](https://developer.layer.com/docs/websdk).
+Sample Apps may load the WebSDK through either:
+
+* [CDN](https://cdn.layer.com/sdk/3.0/layer-websdk.js) (All Backbone and Angular sample apps are built using CDN)
+* [NPM](https://www.npmjs.com/package/layer-websdk) (All React sample apps are built using NPM)
+
+For more information on how the Web SDK works, see [Web SDK Docs](https://docs.layer.com/).
+
+## Layer UI for Web
+
+Applications built using this library use a library of Webcomponent widgets for rendering Layer data and events.  To simplify use from various frameworks, this ships with Adapters to provision its widgets in a manner friendlier to other frameworks.  These adapters are loaded using:
+
+* `layerUI.adapters.react(React, ReactDOM)`
+* `layerUI.adapters.backbone(Backbone)`
+* `layerUI.adapters.angular(Angular)`
 
 ## Authentication
 
